@@ -1,55 +1,239 @@
 import 'package:flutter/material.dart';
+import './model/meal.dart';
 import './model/category.dart';
 
 const DUMMY_CATEGORIES = const [
-  Category(
-    id: 'c1',
-    title: "Italian",
-    color: Colors.purple
+  Category(id: 'c1', title: "Italian", color: Colors.purple),
+  Category(id: 'c2', title: "Quick & Easy", color: Colors.red),
+  Category(id: 'c3', title: "Hamburgers", color: Colors.orange),
+  Category(id: 'c4', title: "German", color: Colors.amber),
+  Category(id: 'c5', title: "Light & Lovely", color: Colors.blue),
+  Category(id: 'c6', title: "Exotic", color: Colors.green),
+  Category(id: 'c7', title: "Breakfast", color: Colors.lightBlue),
+  Category(id: 'c8', title: "Asian", color: Colors.lightGreen),
+  Category(id: 'c9', title: "French", color: Colors.pink),
+  Category(id: 'c10', title: "Summer", color: Colors.teal),
+];
+
+const DUMMY_MEALS = const [
+  Meal(
+    id: 'm1',
+    categories: ['c1', 'c2'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c2',
-      title: "Quick & Easy",
-      color: Colors.red
+  Meal(
+    id: 'm2',
+    categories: ['c2', 'c3'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c3',
-      title: "Hamburgers",
-      color: Colors.orange
+  Meal(
+    id: 'm3',
+    categories: ['c3', 'c4'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c4',
-      title: "German",
-      color: Colors.amber
+  Meal(
+    id: 'm4',
+    categories: ['c4', 'c5'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c5',
-      title: "Light & Lovely",
-      color: Colors.blue
+  Meal(
+    id: 'm5',
+    categories: ['c5', 'c6'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c6',
-      title: "Exotic",
-      color: Colors.green
+  Meal(
+    id: 'm6',
+    categories: ['c6', 'c7'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c7',
-      title: "Breakfast",
-      color: Colors.lightBlue
+  Meal(
+    id: 'm7',
+    categories: ['c7', 'c8'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c8',
-      title: "Asian",
-      color: Colors.lightGreen
+  Meal(
+    id: 'm8',
+    categories: ['c8', 'c9'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c9',
-      title: "French",
-      color: Colors.pink
+  Meal(
+    id: 'm9',
+    categories: ['c9', 'c10'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
-  Category(
-      id: 'c10',
-      title: "Summer",
-      color: Colors.teal
+  Meal(
+    id: 'm10',
+    categories: ['c10', 'c1'],
+    title: 'Spaghetti with Tomato Sauce',
+    imageUrl: 'assets/images/m1.jpg',
+    ingredients: [
+      '4 Tomatoes',
+      '1 Tablespoon of Olive Oil',
+      '1 Onion',
+      '250g Spaghetti',
+      'Spices',
+      'Cheese'
+    ],
+    steps: ['Step 1', 'Step 2'],
+    duration: 20,
+    complexity: Complexity.Simple,
+    affordability: Affordability.Affordable,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
   ),
 ];
